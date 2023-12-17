@@ -5,6 +5,7 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.example.halitra.databinding.ActivityMainBinding
 import com.example.halitra.ui.CameraXActivity
+import com.example.halitra.ui.TextToSpeechActivity
 
 class MainActivity : AppCompatActivity() {
 
@@ -26,7 +27,9 @@ class MainActivity : AppCompatActivity() {
 
         binding.buttonInsideCard2.setOnClickListener {
             // Implementasikan aksi yang diinginkan ketika tombol di dalam CardView diklik
+            startTextToSpeechActivity()
         }
+
 
         // Implementasikan logika atau fungsi lain yang diperlukan dalam onCreate()
     }
@@ -34,5 +37,9 @@ class MainActivity : AppCompatActivity() {
     private fun startCameraXActivity() { // Perbaikan: Menambahkan fungsi startCameraXActivity yang sesuai
         val cameraIntent = Intent(this, CameraXActivity::class.java)
         startActivity(cameraIntent)
+    }
+    private fun startTextToSpeechActivity() {
+        val intent = Intent(this, TextToSpeechActivity::class.java)
+        startActivity(intent)
     }
 }

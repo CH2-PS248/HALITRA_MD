@@ -3,3 +3,5 @@
     <solid android:color="#2D9596" /> <!-- Warna isi oval -->
     <corners android:radius="360dp" /> <!-- Radius sudut oval -->
 </shape>
+<!--    FB8B24-->
+<!--    2D9596-->
