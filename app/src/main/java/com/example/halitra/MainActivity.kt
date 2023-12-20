@@ -5,7 +5,7 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.example.halitra.databinding.ActivityMainBinding
 import com.example.halitra.ui.CameraXActivity
-import com.example.halitra.ui.TextToSpeechActivity
+import com.example.halitra.ui.TTSpeechActivity
 
 class MainActivity : AppCompatActivity() {
 
@@ -29,7 +29,28 @@ class MainActivity : AppCompatActivity() {
             // Implementasikan aksi yang diinginkan ketika tombol di dalam CardView diklik
             startTextToSpeechActivity()
         }
+        binding.bottomNavigationView.setOnNavigationItemSelectedListener { item ->
+            when (item.itemId) {
+                R.id.home -> {
+                    // Tindakan yang akan diambil saat item "Home" dipilih
+                    startActivity(Intent(this@MainActivity, MainActivity::class.java))
 
+                    true
+                }
+                R.id.camera -> {
+                    // Tindakan yang akan diambil saat item "Camera" dipilih
+                    startActivity(Intent(this@MainActivity, CameraXActivity::class.java))
+
+                    true
+                }
+                R.id.mic -> {
+                    // Tindakan yang akan diambil saat item "Mic" dipilih
+                    startActivity(Intent(this@MainActivity, TTSpeechActivity::class.java))
+                    true
+                }
+                else -> false
+            }
+        }
 
         // Implementasikan logika atau fungsi lain yang diperlukan dalam onCreate()
     }
@@ -39,7 +60,7 @@ class MainActivity : AppCompatActivity() {
         startActivity(cameraIntent)
     }
     private fun startTextToSpeechActivity() {
-        val intent = Intent(this, TextToSpeechActivity::class.java)
+        val intent = Intent(this, TTSpeechActivity::class.java)
         startActivity(intent)
     }
 }

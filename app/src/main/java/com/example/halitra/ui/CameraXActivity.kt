@@ -1,5 +1,6 @@
 package com.example.halitra.ui
 import android.Manifest
+import android.content.Intent
 import android.content.pm.PackageManager
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
@@ -9,6 +10,8 @@ import androidx.camera.core.Preview
 import androidx.camera.lifecycle.ProcessCameraProvider
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
+import com.example.halitra.MainActivity
+import com.example.halitra.R
 import com.example.halitra.databinding.ActivityCameraXBinding
 import com.google.common.util.concurrent.ListenableFuture
 
@@ -34,6 +37,32 @@ class CameraXActivity : AppCompatActivity() {
             ActivityCompat.requestPermissions(
                 this, REQUIRED_PERMISSIONS, REQUEST_CODE_PERMISSION
             )
+        }
+
+        binding.bottomNavigationView.selectedItemId = R.id.camera
+
+        // Tambahkan listener untuk menanggapi perubahan item yang dipilih
+        binding.bottomNavigationView.setOnNavigationItemSelectedListener { item ->
+            when (item.itemId) {
+                R.id.home -> {
+                    // Tindakan yang akan diambil saat item "Home" dipilih
+                    startActivity(Intent(this@CameraXActivity, MainActivity::class.java))
+
+                    true
+                }
+//                R.id.camera -> {
+//                    // Tindakan yang akan diambil saat item "Camera" dipilih
+//                    startActivity(Intent(this@CameraXActivity, MainActivity::class.java))
+//
+//                    true
+//                }
+                R.id.mic -> {
+                    // Tindakan yang akan diambil saat item "Mic" dipilih
+                    startActivity(Intent(this@CameraXActivity, TTSpeechActivity::class.java))
+                    true
+                }
+                else -> false
+            }
         }
     }
 
