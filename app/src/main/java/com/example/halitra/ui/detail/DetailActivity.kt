@@ -35,14 +35,14 @@ class DetailActivity : AppCompatActivity() {
 
         Glide.with(this)
             .load(imageUrl)
-            .error(R.drawable.iconhalitra) // Replace with your placeholder image
+            .error(R.drawable.iconhalitra)
             .into(imgNews)
 
 
         tvTitle.text = title
         val clickableSpan = object : ClickableSpan() {
             override fun onClick(widget: View) {
-                // Open the browser with the provided URL
+
                 val browserIntent = Intent(Intent.ACTION_VIEW, Uri.parse(url))
                 startActivity(browserIntent)
             }
@@ -54,11 +54,11 @@ class DetailActivity : AppCompatActivity() {
             spannableString.setSpan(clickableSpan, 0, url.length, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE)
         }
 
-        // Set the SpannableString to the TextView
+
         tvUrl.text = spannableString
         tvUrl.movementMethod = LinkMovementMethod.getInstance()
 
-        // Handle "Read more" button click if needed
+
         val btnReadMore = findViewById<AppCompatButton>(R.id.btn_read_more)
         btnReadMore.setOnClickListener {
             val browserIntent = Intent(Intent.ACTION_VIEW, Uri.parse(url))

@@ -41,7 +41,7 @@ class NewsAdapter (val dataNews: List<ArticlesItem?>?) : RecyclerView.Adapter<Ne
             Toast.makeText(holder.itemView.context, "${title}", Toast.LENGTH_SHORT).show()
 
 
-            // Inside onBindViewHolder method of NewsAdapter
+
             holder.itemView.setOnClickListener {
                 val title = dataNews?.get(position)?.title
                 val imageUrl = dataNews?.get(position)?.urlToImage
@@ -52,7 +52,7 @@ class NewsAdapter (val dataNews: List<ArticlesItem?>?) : RecyclerView.Adapter<Ne
                     putExtra("imageUrl", imageUrl)
                     putExtra("url",url)
                     putExtra("description", description)
-                    // Add more data if needed
+
                 }
                 holder.itemView.context.startActivity(intent)
             }
