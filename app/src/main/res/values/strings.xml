@@ -8,4 +8,5 @@
     <string name="alitra">A L I T R A</string>
     <string name="txttospeech">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent dictum est nec risus elementum, eu rhoncus erat elementum. Fusce ut mauris vel metus tempor porta ut eu enim.</string>
     <string name="titletxt">Text To Speech</string>
+    <string name="news">News Health</string>
 </resources>
