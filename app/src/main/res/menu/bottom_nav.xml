@@ -2,17 +2,17 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item
-        android:title="Home"
+        android:title=""
         android:id="@+id/home"
         android:icon="@drawable/baseline_home_24"/>
     <item
 
-        android:title="Camera"
+        android:title=""
         android:id="@+id/camera"
         android:icon="@drawable/baseline_camera_alt_24"/>
     <item
 
-        android:title="Mic"
+        android:title=""
         android:id="@+id/mic"
-        android:icon="@drawable/baseline_mic_24"/>
+        android:icon="@drawable/vector"/>
 </menu>
