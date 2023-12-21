@@ -14,7 +14,9 @@ class MainViewModel : ViewModel() {
         onSuccess: (List<ArticlesItem>?) -> Unit,
         onFailure: (String) -> Unit
     ) {
-        ApiConfig.getService().getNews().enqueue(object : Callback<ResponseNews> {
+        ApiConfig.getService()
+            .getNews()
+            .enqueue(object : Callback<ResponseNews> {
             override fun onResponse(call: Call<ResponseNews>, response: Response<ResponseNews>) {
                 if (response.isSuccessful) {
                     val responseNews = response.body()

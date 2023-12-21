@@ -75,7 +75,7 @@ class MainActivity : AppCompatActivity() {
 
     }
 
-    private fun startCameraXActivity() { // Perbaikan: Menambahkan fungsi startCameraXActivity yang sesuai
+    private fun startCameraXActivity() {
         val cameraIntent = Intent(this, CameraXActivity::class.java)
         startActivity(cameraIntent)
     }

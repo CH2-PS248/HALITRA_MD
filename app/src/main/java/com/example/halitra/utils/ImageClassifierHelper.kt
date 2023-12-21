@@ -20,7 +20,7 @@ class ImageClassifierHelper(
     var maxResults: Int = 3,
     var numThreads: Int = 4,
     var currentDelegate: Int = DELEGATE_GPU,
-    val modelName: String = "modelELU_metadata.tflite",
+    val modelName: String = "modelELU_metadata (1).tflite",
     val context: Context,
 
     val imageClassifierListener: ClassifierListener?
@@ -50,7 +50,6 @@ class ImageClassifierHelper(
 
         when (currentDelegate) {
             DELEGATE_CPU -> {
-                // Default
             }
 
             DELEGATE_GPU -> {
